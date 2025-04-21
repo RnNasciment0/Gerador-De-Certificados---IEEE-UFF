@@ -10,9 +10,11 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Certifique-se de que a pasta de uploads existe
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -34,10 +36,13 @@ def upload_file():
         generator = editeCertificate()
         generator.df = pd.read_excel(filepath)  # Substitui o DataFrame carregado
         generator.generate_certificates()
+        print("Certificados gerados com sucesso.")
     except Exception as e:
+        print(f"Erro ao gerar certificados: {str(e)}")
         return f"Erro ao gerar certificados: {str(e)}", 500
 
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
