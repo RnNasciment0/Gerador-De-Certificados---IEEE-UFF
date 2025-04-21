@@ -20,9 +20,9 @@ class editeCertificate:
         font = ImageFont.truetype(font_path, 27)
 
         draw.text((668, 578), name, font=font, fill=(0, 0, 0))
-        certificate_image = f'{name}_certificado.png'
-        imagem.save(certificate_image)
-        return certificate_image
+        pdf_path = f'{name}_certificado.pdf'
+        imagem.convert('RGB').save(pdf_path, "PDF", resolution=100)
+        return pdf_path
 
     def generate_certificates(self):
         for _, row in self.df.iterrows():
