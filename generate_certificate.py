@@ -57,7 +57,8 @@ class EditarCertificado:
         fonte = ImageFont.truetype(caminho_fonte, 27)
 
         desenhar.text((675, 578), nome, font=fonte, fill=(0, 0, 0))
-        caminho_pdf = f'{nome}_certificado.pdf'
+        caminho_pdf = os.path.join('certificado', f"{nome}_certificado.pdf")
+        os.makedirs(os.path.dirname(caminho_pdf), exist_ok=True)  # Garante que a pasta exista
         imagem.convert('RGB').save(caminho_pdf, "PDF", resolution=100)
         return caminho_pdf
 
@@ -99,7 +100,6 @@ class EditarCertificado:
             print(f"E-mail enviado para {email_destinatario} com sucesso!")
         except Exception as e:
             print(f"Erro ao enviar e-mail para {email_destinatario}: {str(e)}")
-
 
     def gerar_certificados(self):
         for _, linha in self.dados.iterrows():

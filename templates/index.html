@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Certificados</title>
+    <title>Gerador de Certificados do IEEE-UFF</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Gerador de Certificados</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <label for="file">Carregar arquivo .xlsx:</label>
-        <input type="file" id="file" name="file" accept=".xlsx" required>
-        <button type="submit">Gerar Certificados</button>
-    </form>
+    <header>
+        <h1>Gerador de Certificados do IEEE-UFF</h1>
+        <p>Envie sua lista de participantes e receba os certificados automaticamente!</p>
+    </header>
+    <main>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Carregar arquivo .xlsx:</label>
+            <input type="file" id="file" name="file" accept=".xlsx" required>
+            <button type="submit">Gerar Certificados</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Gerador de Certificados. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
