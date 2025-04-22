@@ -66,8 +66,8 @@ class EditarCertificado:
         # Configurações do servidor SMTP
         servidor_smtp = "smtp.gmail.com"
         porta_smtp = 587
-        email_remetente = "renan_sn@id.uff.br"
-        senha_remetente = "988169990"
+        email_remetente = "insiraSeuEmail"
+        senha_remetente = "insiraSuaSenha"
 
         # Configura o e-mail
         assunto = "Seu Certificado"
