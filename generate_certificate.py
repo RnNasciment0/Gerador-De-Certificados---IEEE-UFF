@@ -48,7 +48,7 @@ class EditarCertificado:
             raise FileNotFoundError(f"Arquivo de fonte não encontrado: {caminho_fonte}")
 
         # Abrevia o nome se necessário
-        tamanho_maximo = 30  # Defina o limite de caracteres
+        tamanho_maximo = 25  # Defina o limite de caracteres
         nome = self.abreviar_nome(nome, tamanho_maximo)
 
         # Cria a imagem do certificado
